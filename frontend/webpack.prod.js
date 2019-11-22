@@ -20,6 +20,7 @@ module.exports = {
             "node_modules"
         ]
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -40,29 +41,24 @@ module.exports = {
                             }
                         }
                     }, {
-                        loader: 'sass-loader'
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
                     }
                 ]
             }
         ]
     },
-    devtool: 'cheap-module-eavl-source-map',
-    devServer: {
-        port: 8081,
-        historyApiFallback: true,
-        open: true
-    },
     optimization: {
-        splitChunks: {
-          chunks: 'all'
-        }
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'public/index.html'
+            template: 'public/index.html',
+            favicon: 'public/favicon.ico'
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/styles.[hash].css'
+            filename: 'css/[name].[hash].css'
         })
     ]
 };
