@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Home from './Home'
-import SecondPage from './SecondPage'
 
-import 'styles/bootstrap.css';
+const Home = lazy(() => import(/* webpackChunkName: "Home" */'./Home'));
+const SecondPage = lazy(() => import(/* webpackChunkName: "SecondPage" */'./SecondPage'));
+
 import 'styles/main.scss';
 import 'styles/styles.scss';
 import 'styles/test.css';
@@ -13,8 +13,12 @@ const App = () => {
         <div>
             asdf
             <BrowserRouter>
-                <Route exact path="/" component={Home} />
-                <Route path="/next" component={SecondPage} />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/next" component={SecondPage} />
+                    </Switch>
+                </Suspense>
             </BrowserRouter>
         </div>
     )
