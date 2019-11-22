@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: {
         app: `${commonPaths.appEntry}/index.js`
     },
@@ -44,6 +45,11 @@ module.exports = {
         port: 8081,
         historyApiFallback: true,
         open: true
+    },
+    optimization: {
+        splitChunks: {
+          chunks: 'all'
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
