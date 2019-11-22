@@ -1,5 +1,4 @@
 const commonPaths = require('./build-utils/common-paths');
-const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -41,9 +40,16 @@ module.exports = {
                             }
                         }
                     }, {
+                        loader: 'postcss-loader'
+                    }, {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true
+                            sourceMap: true,
+                            sassOptions: {
+                                includePaths: [
+                                    `${commonPaths.appEntry}/styles`
+                                ]
+                            }
                         }
                     }
                 ]
@@ -51,7 +57,7 @@ module.exports = {
         ]
     },
     devServer: {
-        port: 8081,
+        port: `${commonPaths.port ? commonPaths.port : 8080}`,
         historyApiFallback: true,
         open: true
     },

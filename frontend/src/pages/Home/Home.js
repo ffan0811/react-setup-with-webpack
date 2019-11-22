@@ -10,6 +10,9 @@ const Home = () => {
         <div className={cx('test')}>
             homeeee집집
             <Link to='/next'>go to second page</Link>
+            <div className={cx('example', 'test')}>
+                <p className={cx('example1')}>ㅎㅇㅎㅇㅎㅇ</p>
+            </div>
         </div>
     )
 }

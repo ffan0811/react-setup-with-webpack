@@ -1,5 +1,4 @@
 const commonPaths = require('./build-utils/common-paths');
-const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -41,9 +40,16 @@ module.exports = {
                             }
                         }
                     }, {
+                        loader: 'postcss-loader'
+                    }, {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true
+                            sourceMap: true,
+                            sassOptions: {
+                                includePaths: [
+                                    `${commonPaths.appEntry}/styles`
+                                ]
+                            }
                         }
                     }
                 ]
@@ -51,11 +57,14 @@ module.exports = {
         ]
     },
     optimization: {
+        
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'public/index.html',
-            favicon: 'public/favicon.ico'
+            favicon: 'public/favicon.ico',
+            hash: true,
+            cache: true
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[hash].css'

@@ -5,8 +5,6 @@ const Home = lazy(() => import(/* webpackChunkName: "Home" */'./Home'));
 const SecondPage = lazy(() => import(/* webpackChunkName: "SecondPage" */'./SecondPage'));
 
 import 'styles/main.scss';
-import 'styles/styles.scss';
-import 'styles/test.css';
 
 const App = () => {
     return (
