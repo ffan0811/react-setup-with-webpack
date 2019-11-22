@@ -10,7 +10,7 @@ module.exports = {
         app: `${commonPaths.appEntry}/index.js`
     },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].[hash].js',
         publicPath: '/',
         path: commonPaths.outputPath,
     },
@@ -20,6 +20,7 @@ module.exports = {
             "node_modules"
         ]
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -33,23 +34,26 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            modules: {
+                                localIdentName: '[path][name]__[local]', 
+                            }
+                        }
                     }, {
-                        loader: 'sass-loader'
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
                     }
                 ]
             }
         ]
     },
-    devtool: 'cheap-module-eavl-source-map',
     devServer: {
         port: 8081,
         historyApiFallback: true,
         open: true
-    },
-    optimization: {
-        splitChunks: {
-          chunks: 'all'
-        }
     },
     plugins: [
         new HtmlWebpackPlugin({

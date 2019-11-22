@@ -1,0 +1,85 @@
+@import 'utils';
+
+abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html, body {
+	background-color: $dirtyWhite;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+	font-size: 10px;
+  // background-color: $backgroundColor;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+a {
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	text-decoration: none;
+	border: 0;
+	background: transparent;
+	color: inherit;
+	text-decoration: inherit;
+	
+	&:visited, &:hover, &:focus, &:active {
+    text-decoration: none;
+		color: initial;
+		outline: none !important;
+		box-shadow: none !important;
+	}
+}
+
+button {
+	color: inherit;
+	font-weight: inherit;
+	background: none;
+	border: none;
+	// padding: 0;
+	// width: 100%;
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+input {
+	outline: none;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+li {
+	list-style-type: none;
+	list-style: none;
+}
+
+main {
+	display: block;
+}
+
+table, thead, tbody, tr, th, td {
+	border-collapse: collapse;
+	border-spacing: 0;
+}

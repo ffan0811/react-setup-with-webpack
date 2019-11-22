@@ -1,9 +1,13 @@
 import React from 'react'
-import './SecondPage.scss'
+import classNames from 'classnames/bind';
+import styles from './SecondPage.scss'
+
+const cx = classNames.bind(styles);
 
 const SecondPage = () => {
+    var test = true;
     return (
-        <div className="div">
+        <div className={cx('div', test && 'test')}>
             SecondPage
         </div>
     )

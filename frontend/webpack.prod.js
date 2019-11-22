@@ -33,6 +33,12 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            modules: {
+                                localIdentName: '[hash:base64:5]',
+                            }
+                        }
                     }, {
                         loader: 'sass-loader'
                     }

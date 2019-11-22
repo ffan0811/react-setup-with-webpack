@@ -1,0 +1,62 @@
+$breakpoints: (
+  //xs
+  small: 576px,
+  //sm
+  medium: 768px,
+  //md
+  large: 992px,
+  //lg
+  huge: 1200px
+);
+
+//z-index
+$Zheader : 50;
+$Zfooter : 50;
+
+//color
+$primary: #EB4646;
+$primaryDark: #B42F2F;
+$primaryDarker: #840909;
+$primaryLight: #ED6363;
+$primaryLighter: #F99494;
+$primaryLightest: #FCEAEA;
+$info: #2F8EFE;
+$success: #57CA5B;
+$successDark: rgba(6, 121, 57, 1); //#067939
+$successLight: rgba(141, 231, 181, 1); //#8de7b5
+$successLighter: rgba(205, 244, 222, 1); //#cdf4de
+
+$mainBg: #FF6060;
+
+$danger: rgba(255, 96, 96, 1); //#ff6060
+$dangerDark: rgba(235, 43, 43, 1); //#eb2b2b
+$dangerLight: rgba(255, 179, 179, 1); //#ffb3b3
+$dangerLighter: rgba(255, 221, 221, 1); //#ffdddd
+$danger2: rgba(227, 52, 125, 1); //#e3347d
+
+$warning: #F2B519;
+$warningDark: rgba(194, 104, 22, 1); //#c26816
+$warningLight: rgba(251, 226, 160, 1); //#fbe2a0
+$warningLighter: rgba(253, 242, 213, 1); //#fdf2d5
+
+$basicLight: #AC9B9B;
+$basicLighter: #DCCBCB;
+$basicLightest: #F7EEEE;
+$basicDark: #7B6A6A;
+$basicDarker: #554545; 
+$basicDarkest: #3D2A2A;
+$white : #fff;
+$dirtyWhite: #fbfafa;
+$black : #2A2121;
+
+$regular: 400;
+$thin: $regular - 200;
+$light: $regular - 100;
+$medium: $regular + 100;
+$bold: $regular + 200;
+$fblack: $regular + 300;
+$extra: $regular + 500;
+
+$headerPc: 6.2rem;
+$headerMobile: 4.6rem;
+$headerMobileExpanded: 9.4rem;

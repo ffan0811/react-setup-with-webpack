@@ -3,6 +3,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './Home'
 import SecondPage from './SecondPage'
 
+import 'styles/bootstrap.css';
+import 'styles/main.scss';
+import 'styles/styles.scss';
+import 'styles/test.css';
+
 const App = () => {
     return (
         <div>
