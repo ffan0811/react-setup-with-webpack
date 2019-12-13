@@ -53,6 +53,16 @@ module.exports = {
                         }
                     }
                 ]
+            }, {
+                test: /\.(png|jpg|gif|svg|mp4|woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },
